@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+</head>
+<body>
+    <button onclick="nueVentana()">Nueva pestaña de Google</button>
+    <script>
+        window.statusbar.visible = "Bienvenido a JavaScript";
+        function nueVentana(){
+            window.open("https://www.google.es/", width=600, height=400, top=50, left=150, 'scrollbar=no menubar=no, toolbar=no, location=no, status=no');
+        }
+        document.write("<br>"+"<b>"+"Objeto screen"+"</b>"+"<br>"+"La resolución de la pantalla es "+screen.width+"x"+screen.height+"<br>");
+        document.write("<b>"+"Objeto navigator"+"</b>"+"<br>"+"El nombre del navegador que usas es: "+navigator.appName+"<br>"+"<br>");
+        document.write("Usa el siguiente sistema operativo: "+"<br>");
+        document.write("La version del navegador que usas es: "+navigator.appVersion+"<br>");
+        document.write("<br>"+"<b>"+"Objeto documento"+"</b>"+"<br>"+"La URL es "+document.URL);
+    </script>
+</body>
+</html>

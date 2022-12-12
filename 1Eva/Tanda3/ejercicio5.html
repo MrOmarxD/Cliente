@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+<script>
+    let num = "";
+    function calcular(){
+        if(num.indexOf("/0")!=-1)
+            num = "Math Error";
+        else
+            num = eval(num);
+        mostrarPantalla();
+    }
+    function mostrarPantalla(){
+        let pantalla = document.getElementById("pantalla");
+        pantalla.value = num;
+    }
+    function seleccionar(i){
+        if(num == "Math Error")
+            num = "";
+        if(i == 'c'){
+            num = "";
+            mostrarPantalla();
+        }
+        else{
+            if(i == '='){
+                calcular();
+            }
+            else{
+                if(i=>0 && i<=9){
+                    num+=i;
+                    mostrarPantalla();
+                }
+                else
+                    num.substr(0,num.length-1);
+            }
+        }
+    }
+    //No me funciona lo de onkeyup (escribir los valores desde el teclado)
+    function myFunction() {
+        let x = document.getElementById("pantalla");
+        seleccionar(x.value.charAt(x.value.length-1));
+    }
+</script>
+<body>
+    <h1>CALCULADORA</h1>
+    <div border="1">
+        <input type="text" id="pantalla" onkeyup="myFunction()">
+        <table>
+            <tr>
+                <td><input type="button" value="1" onclick="seleccionar('1')"></td>
+                <td><input type="button" value="2" onclick="seleccionar('2')"></td>
+                <td><input type="button" value="3" onclick="seleccionar('3')"></td>
+                <td><input type="button" value="C" onclick="seleccionar('c')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="seleccionar('4')"></td>
+                <td><input type="button" value="5" onclick="seleccionar('5')"></td>
+                <td><input type="button" value="6" onclick="seleccionar('6')"></td>
+                <td><input type="button" value="+" onclick="seleccionar('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="seleccionar('7')"></td>
+                <td><input type="button" value="8" onclick="seleccionar('8')"></td>
+                <td><input type="button" value="9" onclick="seleccionar('9')"></td>
+                <td><input type="button" value="-" onclick="seleccionar('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" onclick="seleccionar('0')"></td>
+                <td><input type="button" value="/" onclick="seleccionar('/')"></td>
+                <td><input type="button" value="=" onclick="seleccionar('=')"></td>
+                <td><input type="button" value="*" onclick="seleccionar('*')"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

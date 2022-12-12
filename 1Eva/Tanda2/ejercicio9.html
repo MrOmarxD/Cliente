@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio9</title>
+</head>
+<body>
+    <h1>MANEJANDO VENTANAS</h1>
+    <script>
+        
+        let ventana; 
+        function validarFormulario() {
+            if (formulario.nombre.value == "") {
+                alert("Debes de rellenar la casilla de nombre");
+                formulario.nombre.focus();
+            }
+            else{
+                let eleInputButton_cerrar = document.createElement("input");
+                eleInputButton_cerrar.type = "button";
+                eleInputButton_cerrar.value = "EMPEZAR A NAVEGAR";
+                eleInputButton_cerrar.addEventListener("click", cerrar);
+                ventana = window.open("", "Bienvenido", 'width=300, height=300');
+                ventana.document.write("Bienvenido "+document.getElementById("nombre").value+"<br>");
+                ventana.document.body.appendChild(eleInputButton_cerrar);
+            }   
+        }
+        function cerrar(){
+            ventana.close();
+            window.location = "https://www.google.es/";
+        }
+    </script>
+    <form name="formulario">
+        <label for="nombre">Nombre y Apellidos:</label>
+        <input type="text" id="nombre" name="nombre">
+        <input type="button" value="Entrar" onclick="validarFormulario()"/>
+    </form>
+</body>
+</html>

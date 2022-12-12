@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css.css"/>
+    <title>Ejercicio7-Formulario</title>
+</head>
+<body>
+    
+    <div>
+        <form action="#" name="formulario">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" placeholder="Escribe tu email"><br>
+            <label for="asunto">Asunto:</label><br>
+            <select name="asunto" id="asunto">
+                <option value="SolicitarInfo">Solicitar información</option>
+                <option value="curso">Apuntarse a un curso</option>
+                <option value="otro">Otro motivo</option>
+            </select><br>
+            <label for="curso" id="cursoLabel">Curso:</label>
+            <input type="text" name="curso" id="curso" placeholder="Escriba el curso">
+            <label for="mensaje">Escibe un mensaje:</label><br>
+            <textarea name="mensaje" id="mensaje"></textarea>
+        </form>
+    </div>
+</body>
+<script src="./app.js"></script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio10</title>
+</head>
+<body>
+    <button onclick="abrirVentana()">Abrir Ventanas Emergentes</button>
+    <script>
+        function abrirVentana(){
+            let ventana1 = window.open("", "", "width=200,height=200");
+            let ventana2 = window.open("", "", "width=200,height=200");
+            let ventana3 = window.open("", "", "width=200,height=200");
+            let ventana4 = window.open("", "", "width=200,height=200");
+            let ventana5 = window.open("", "", "width=200,height=200");
+            ventana1.document.write("<button onclick='window.close()'>Cerrar</button>");
+            ventana2.document.write("<button onclick='window.close()'>Cerrar</button>");
+            ventana3.document.write("<button onclick='window.close()'>Cerrar</button>");
+            ventana4.document.write("<button onclick='window.close()'>Cerrar</button>");
+            ventana5.document.write("<button onclick='window.close()'>Cerrar</button>");
+        }
+    </script>
+</body>
+</html>

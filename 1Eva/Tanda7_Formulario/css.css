@@ -1,0 +1,17 @@
+*{
+    margin: .4em;
+}
+div{
+    background-color: lightblue;
+    border: 1px solid black;
+    border-radius: 1em;
+    padding: 1em;
+    margin:auto;
+    width: 200px;
+}
+#curso{
+    border: 1px solid red;
+}
+#cursoLabel, #curso{
+    display: none;
+}

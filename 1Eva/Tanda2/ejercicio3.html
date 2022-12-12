@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+</head>
+<body>
+    <header>
+        <h1>Cambia el color de fondo</h1>
+    </header>
+    <form action="formulario" method="post">
+        <input type="button" value="verde" id="green" onclick= "cambiarColor('green')">
+        <input type="button" value="rojo" id="red" onclick = "cambiarColor('red')">
+        <input type="button" value="azul" id="blue" onclick = "cambiarColor('blue')">
+        <input type="button" value="amarillo" id="yellow" onclick = "cambiarColor('yellow')">
+        <input type="button" value="gris" id="grey" onclick= "cambiarColor('grey')"">
+    </form>
+    <script>
+        function cambiarColor(color) {
+            document.body.style.background = color;
+        }
+    </script>
+</body>
+</html>

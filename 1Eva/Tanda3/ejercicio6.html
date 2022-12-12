@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table{margin: 0 auto; empty-cells: hide;}
+        h1{text-align: center;}
+        td {border: 1px solid black;}
+    </style>
+    <title>Ejercicio6</title>
+</head>
+<body>
+    <h1>FECHA Y HORA</h1>
+    <table>
+        <tr>
+            <td id="d1"><img src="" alt="Imagen 1 de dia"></td>
+            <td id="d2"><img src="" alt="Imagen 2 de dia"></td>
+            <td id="barra"><img src="images/barra.jpg" alt="Imagen de barra"></td>
+            <td id="m1"><img src="" alt="Imagen 1 de mes"></td>
+            <td id="m2"><img src="" alt="Imagen 2 de mes"></td>
+            <td id="barra"><img src="images/barra.jpg" alt="Imagen de barra"></td>
+            <td id="a1"><img src="" alt="Imagen 1 de anio"></td>
+            <td id="a2"><img src="" alt="Imagen 2 de anio"></td>
+            <td id="a3"><img src="" alt="Imagen 3 de anio"></td>
+            <td id="a4"><img src="" alt="Imagen 4 de anio"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="h1"><img src="" alt="Imagen 1 de hora"></td>
+            <td id="h2"><img src="" alt="Imagen 2 de hora"></td>
+            <td id="puntos"><img src="images/puntos.jpg" alt="Imagen de puntos"></td>
+            <td id="min1"><img src="" alt="Imagen 1 de min"></td>
+            <td id="min2"><img src="" alt="Imagen 2 de min"></td>
+            <td id="puntos"><img src="images/puntos.jpg" alt="Imagen de puntos"></td>
+            <td id="s1"><img src="" alt="Imagen 1 de segundos"></td>
+            <td id="s2"><img src="" alt="Imagen 2 de segundos"></td>
+        </tr>
+    </table>
+    <script>
+        arrImg = ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg","9.jpg",
+        "barra.jpg", "puntos.jpg"];
+        function actualizarFecha(){
+            let fechaHora = darFormatoFecha(new Date());
+
+            if(fechaHora[0]<10){
+                document.getElementById("d1").getElementsByTagName("img")[0].src = "images/"+arrImg[0];
+                document.getElementById("d2").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[0]];
+            }
+            else{
+                document.getElementById("d1").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[0].substr(0,1)];
+                document.getElementById("d2").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[0].substr(1,1)];
+            }
+            if(fechaHora[1]<10){
+                document.getElementById("m1").getElementsByTagName("img")[0].src = "images/"+arrImg[0];
+                document.getElementById("m2").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[1]];
+            }
+            else{
+                document.getElementById("m1").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[1].substr(0,1)];
+                document.getElementById("m2").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[1].substr(1,1)];
+            }
+            document.getElementById("a1").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[2].substr(0,1)];
+            document.getElementById("a2").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[2].substr(1,1)];
+            document.getElementById("a3").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[2].substr(2,1)];
+            document.getElementById("a4").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[2].substr(3,1)];
+            document.getElementById("h1").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[3].substr(0,1)];
+            document.getElementById("h2").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[3].substr(1,1)];
+            document.getElementById("min1").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[4].substr(0,1)];
+            document.getElementById("min2").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[4].substr(1,1)];
+            document.getElementById("s1").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[5].substr(0,1)];
+            document.getElementById("s2").getElementsByTagName("img")[0].src = "images/"+arrImg[fechaHora[5].substr(1,1)];
+        }
+        setInterval(actualizarFecha, 1000);
+        function darFormatoFecha(date){
+            let now = new Date();
+            let fecha = now.toLocaleString();
+            let arrFecha = fecha.split(",");
+            let parte1 = arrFecha[0].trim().split("/");
+            let parte2 = arrFecha[1].trim().split(":");
+            let fechaHora = [parte1[0],parte1[1],parte1[2],parte2[0],parte2[1],parte2[2]];
+            return fechaHora;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+</head>
+<body>
+    <h1>VALIDADOR DE DNI</h1>
+    <p>Introduce el número de dni:</p><input type="text" id="numDni"/>
+    <p>Introduce la letra de dni:</p><input type="text" id="letraDNI"/>
+    <input type="button" name="boton" value="VALIDAR" onclick="validarDni()"/>
+    <script>
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+        function validarDni(){
+            let eleNumDni = document.getElementById("numDni").value;
+            let eleLetraDni = document.getElementById("letraDNI").value;
+            if(eleNumDni>=0 && eleNumDni<=99999999){
+                let letraReal = letras[eleNumDni%23];
+                if(letraReal==eleLetraDni)
+                    document.write("El DNI "+eleNumDni+eleLetraDni+" es valido");
+                else
+                    document.write("El DNI "+eleNumDni+eleLetraDni+" es no valido, le corresponde la letra "+letraReal);
+            }
+            else{
+                alert("Debe de introducir un numero comprendido entre 0 y 99999999");
+            }
+        }
+    </script>
+</body>
+</html>

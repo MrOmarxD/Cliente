@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio7</title>
+</head>
+<body>
+    <script>
+        let fecha=(prompt("Introduce un año"));
+        let a = new Date(fecha,0);
+        let hoy = new Date();
+        let t = hoy.getTime()-a.getTime()+1;
+      
+        
+        let d = Math.round(t/(1000*60*60*24));
+        let h = hoy.getHours();
+        let m = hoy.getMinutes();
+        let s = hoy.getSeconds();
+        document.write("Han pasado "+d+" dias, "+h+" horas, "+m+" min, "+s+" seg");
+</script>
+</body>
+</html>

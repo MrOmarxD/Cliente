@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+</head>
+<body>
+    <script>
+        let fecha_nacimiento = prompt("Fecha de nacimiento (aaaa/mm/dd):");
+        let anio = parseInt(fecha_nacimiento.substring(0,fecha_nacimiento.indexOf("/")));
+        let mes = parseInt(fecha_nacimiento.substring(fecha_nacimiento.indexOf("/")+1, fecha_nacimiento.lastIndexOf("/")));
+        let dia = parseInt(fecha_nacimiento.substring(fecha_nacimiento.lastIndexOf("/")+1));
+        
+        let hoy = new Date();
+
+        let edad = parseInt(hoy.getFullYear()) - anio;
+        let m = parseInt(hoy.getMonth()) - mes;
+
+        if (m < 0 || (m === 0 && hoy.getDate() < dia)) {
+            edad--;
+        }
+
+        document.write(anio+"/"+mes+"/"+dia+": "+edad);
+    </script>
+</body>
+</html>

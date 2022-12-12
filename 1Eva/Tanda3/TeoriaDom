@@ -1,0 +1,29 @@
+// let eleP_prueba;
+
+window.onload
+{
+    eleP_prueba=document.getElementById("prueba").getElementById("asdasd");
+    // document.getElementsByTagName("p");
+
+    // let txtHtml="";
+    // txtHtml+="<div><P>FADASDAS</P>";
+    // txtHtml+="</div>";
+    // eleP_prueba.textContent=txtHtml;
+    // eleP_prueba.innerHTML=txtHtml;
+
+    // let eleP_hijo=document.createElement("p");
+    // eleP_hijo.innerHTML=txtHtml;
+    // eleP_prueba.appendChild(eleP_hijo);
+
+    // eleP_hijo.addEventListener("click", funcionPrueba);
+
+
+    prepareEvents();    
+
+
+}
+
+// function funcionPrueba()
+// {
+//     console.log("prueba ");
+// }
