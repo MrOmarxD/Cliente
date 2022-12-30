@@ -12,15 +12,12 @@ export class SlideshowComponent implements OnInit, AfterViewInit{
   @Input() movies: Movie[] = [];
 
   constructor() { }
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   ngOnInit(): void {
     console.log(this.movies);
   }
 
-  ngAfterContentInit(): void{
+  ngAfterViewInit(): void{
 
     const mySwiper = new Swiper('.swiper-container',{
       // Optional parameters
