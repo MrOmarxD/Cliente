@@ -10,6 +10,7 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 export class HomeComponent implements OnInit{
 
   public movies: Movie[] = [];
+  public moviesSlideshow: Movie[]= [];
 
   @HostListener('window:scroll', ['$event'])
   onScroll(){
@@ -19,6 +20,17 @@ export class HomeComponent implements OnInit{
     if(pos>max){
       // Llama al servicio
       console.log('Llama al servicio');
+
+      if(this.peliculasService.cargando){
+        return;   // No tiene que seguir cargando
+      }
+
+      this.peliculasService.getCartelera()
+      .subscribe(movies =>{
+        this.movies.push(...movies);
+
+      });
+
     }
   }
 
@@ -29,10 +41,13 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     
     // getCartelera
+
     this.peliculasService.getCartelera()
-    .subscribe(resp=>{
-      console.log(resp);
-      this.movies = resp.results;
+    .subscribe( movies => {
+
+      this.movies = movies;
+      this.moviesSlideshow = movies;
     })
+    
   }
 }
