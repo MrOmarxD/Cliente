@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, map } from 'rxjs';
 import { CarteleraResponse, Movie } from '../interface/cartelera.response';
-import { tap } from 'rxjs';
+import { catchError, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -67,9 +67,27 @@ export class PeliculasService {
     
     return this.http.get<MovieResponse>('${ this.baseUrl}/movie/${id}', {
       params: this.params
-    });
+    }).pipe(
+      catchError(err=>of([null]))
+    )
 
     // En los params está la apikey y el lenguaje
     
+  }
+
+  getCast(id: string){
+
+    //
+
+    return this.http.get<CreditsResponse>(`${ this.baseUrl}/movie/${id}/credits`, {
+      params: this.params
+    }).pipe(
+      map( resp=> resp.cast),
+      catchError(err=>of([]))
+    );
+
+    // No me interesa devolver todo el objeto, solo el casting: resp.cast
+
+    // En los params está la apikey y el lenguaje
   }
 }
