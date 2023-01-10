@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PeliculasService } from '../../services/peliculas.service';
-// impoet { MovieResponse }
 import { Cast } from 'src/app/interface/credits-response';
 import { Location } from '@angular/common';
+import { MovieResponse } from 'src/app/interface/movie-response';
 
 @Component({
   selector: 'app-pelicula',

@@ -11,7 +11,7 @@ export interface MovieResponse {
     original_title:         string;
     overview:               string;
     popularity:             number;
-    poster_path:            null;
+    poster_path:            string;
     production_companies:   any[];
     production_countries:   any[];
     release_date:           string;
@@ -24,4 +24,9 @@ export interface MovieResponse {
     video:                  boolean;
     vote_average:           number;
     vote_count:             number;
+}
+
+export interface Genre {
+    id:     number;
+    name:   string;
 }

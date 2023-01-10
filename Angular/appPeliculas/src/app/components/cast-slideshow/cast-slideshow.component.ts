@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
-import { Cast } from '.../.../interface/credits-response';
+import { Cast } from 'src/app/interface/credits-response';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-cast-slideshow',

@@ -9,11 +9,19 @@ import Swiper from 'swiper';
 })
 export class SlideshowComponent implements OnInit, AfterViewInit{
 
-  @Input() movies: Movie[] = [];
+  @Input()
+  movies: Movie[] = [];
 
   public mySwiper!: Swiper;
 
   constructor() { }
+
+  ngAfterViewInit(): void{
+
+    this.mySwiper = new Swiper('.swiper-container',{
+      loop: true,
+    });
+  }
 
   ngOnInit(): void {
     console.log(this.movies);
@@ -25,12 +33,5 @@ export class SlideshowComponent implements OnInit, AfterViewInit{
 
   onSlidePrevious(){
     this.mySwiper.slidePrev();
-  }
-
-  ngAfterViewInit(): void{
-
-    this.mySwiper = new Swiper('.swiper-container',{
-      loop: true,
-    });
   }
 }
