@@ -9,6 +9,7 @@ import { DatabaseTablaComponent } from './components/database-tabla/database-tab
 // Material
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {MatTableModule} from '@angular/material/table';
     BrowserAnimationsModule,
     MatCardModule,
     MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
