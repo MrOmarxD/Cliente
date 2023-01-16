@@ -9,46 +9,41 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 })
 export class HomeComponent implements OnInit, OnDestroy{
 
-  public movies: Movie[] = [];
+  public movies: Movie[]=[];
   public moviesSlideshow: Movie[]= [];
 
   @HostListener('window:scroll', ['$event'])
   onScroll(){
-    const pos = (document.documentElement.scrollTop || document.body.scrollTop) + 1200;
-    const max = (document.documentElement.scrollHeight || document.body.scrollHeight);
-
+    const pos=(document.documentElement.scrollTop || document.body.scrollTop) + 1200;
+    const max=(document.documentElement.scrollHeight || document.body.scrollHeight);
+    
     if(pos>max){
-      // Llama al servicio
-      console.log('Llama al servicio');
+      console.log('Llamar al servicio');
 
       if(this.peliculasService.cargando){
-        return;   // No tiene que seguir cargando
+        return;
       }
 
       this.peliculasService.getCartelera()
       .subscribe(movies =>{
         this.movies.push(...movies);
-
+        
       });
-
     }
   }
 
-  constructor(private peliculasService: PeliculasService){
+  constructor ( private peliculasService: PeliculasService){}
 
-  }
+  ngOnInit(): void{
 
-  ngOnInit(): void {
-    
     // getCartelera
 
     this.peliculasService.getCartelera()
     .subscribe( movies => {
-
+      
       this.movies = movies;
       this.moviesSlideshow = movies;
     })
-    
   }
 
   ngOnDestroy(): void {

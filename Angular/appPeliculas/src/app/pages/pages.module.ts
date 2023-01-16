@@ -16,8 +16,8 @@ import { RatingModule } from 'ng-starrating';
   ],
   imports: [
     CommonModule,
-    ComponentsModule, 
-    PipesModule, 
+    ComponentsModule,
+    PipesModule,
     RatingModule
   ]
 })

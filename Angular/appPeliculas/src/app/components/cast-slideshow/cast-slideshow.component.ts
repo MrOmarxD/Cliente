@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
+import { AfterContentInit, Component, Input, OnInit } from '@angular/core';
 import { Cast } from 'src/app/interface/credits-response';
 import Swiper from 'swiper';
 
@@ -7,21 +7,22 @@ import Swiper from 'swiper';
   templateUrl: './cast-slideshow.component.html',
   styleUrls: ['./cast-slideshow.component.scss']
 })
-export class CastSlideshowComponent implements OnInit, AfterViewInit{
+export class CastSlideshowComponent implements OnInit, AfterContentInit{
 
-  @Input() cast: Cast[] = [];
+  @Input() cast: Cast [] =[];
 
-  constructor() { }
+  constructor () { }
 
   ngOnInit(): void {
     console.log(this.cast);
   }
 
-  ngAfterViewInit(): void {
-    const swiper = new Swiper('.swiper-container',{
-    slidesPerView: 5.3,
-    freeMode: true,
-    spaceBetween: 15
-  })
+  ngAfterContentInit(): void {
+    const swiper= new Swiper('.swiper-container',{
+      slidesPerView: 5.3,
+      freeMode: true,
+      spaceBetween: 15
+    })
   }
+
 }

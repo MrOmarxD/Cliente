@@ -8,7 +8,7 @@ import { PosterPipe } from './poster.pipe';
   declarations: [
     PosterPipe
   ],
-  exports:[
+  exports: [
     PosterPipe
   ],
   imports: [

@@ -16,12 +16,14 @@ export class NavbarComponent implements OnInit{
 
   buscarPelicula( texto: string ){
 
-    texto = texto.trim();
+    texto= texto.trim();
 
-    if (texto.length === 0){
+    if(texto.length === 0){
       return;
     }
-    
-    this.router.navigate(['/buscar', texto]);
+
+    this.router.navigate(['/buscar',texto]);
+
+    console.log(texto);
   }
 }

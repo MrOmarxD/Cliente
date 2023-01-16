@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BuscarComponent } from './pages/buscar/buscar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PeliculaComponent } from './pages/pelicula/pelicula.component';
-import { BuscarComponent } from './pages/buscar/buscar.component';
 
 const routes: Routes = [
   {
@@ -13,6 +13,7 @@ const routes: Routes = [
   {
     path: 'pelicula/:id',
     component: PeliculaComponent
+    
   },
   {
     path: 'buscar/:texto',
@@ -25,13 +26,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports:[
-    RouterModule
-  ]
+    RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

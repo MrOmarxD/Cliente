@@ -8,7 +8,6 @@ import { RatingModule } from 'ng-starrating';
 import { PipesModule } from '../pipes/pipes.module';
 import { CastSlideshowComponent } from './cast-slideshow/cast-slideshow.component';
 
-
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -26,7 +25,6 @@ import { CastSlideshowComponent } from './cast-slideshow/cast-slideshow.componen
     NavbarComponent,
     SlideshowComponent,
     PeliculasPosterGridComponent,
-    RatingModule,
     CastSlideshowComponent
   ]
 })

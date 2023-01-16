@@ -10,16 +10,20 @@ import { Router } from '@angular/router';
 export class PeliculasPosterGridComponent implements OnInit{
 
   @Input()
-  movies: Movie[] = [];
+  movies: Movie[]=[];
+  
 
-  constructor() { }
+  constructor(
+    private router : Router
+  ) {}
 
   ngOnInit(): void {
     console.log(this.movies);
   }
 
-  onMovieClick( movie: Movie){
+  onMovieClick(movie: Movie){
     console.log(movie);
-    this.router.navegate(['/pelicula',movie.id])
+    this.router.navigate(['/pelicula',movie.id])
   }
 }
+
