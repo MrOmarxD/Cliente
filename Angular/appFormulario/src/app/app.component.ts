@@ -19,16 +19,18 @@ export class AppComponent {
   } 
   cargarDataAlFormulario() {
     this.forma.reset({
-      nombre: 'Txema',
-      apellido: 'Serrano',
-      correo: 'jsersan@gmail.com'
+      nombre: 'Omar',
+      apellido: 'Eiyana',
+      correo: 'omareiyana@gmail.com'
     });
   }
 
   crearFormulario() {
     this.forma = this.fb.group({
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
+      nombre: ['', [Validators.required, Validators.minLength(5)]],
+      apellido: ['', [Validators.required, Validators.minLength(5)]],
+      pass1: ['', Validators.required],
+      pass2: ['', Validators.required],
       correo: [
         '', 
         [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]
