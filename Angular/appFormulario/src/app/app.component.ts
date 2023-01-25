@@ -40,6 +40,8 @@ export class AppComponent {
         provincia: ['', Validators.required]
     }),
     pasatiempos: this.fb.array([])
+  },{
+    //Validators: this['validadores'].passwordsIguales('pass1', 'pass2')
   });
   }
 
