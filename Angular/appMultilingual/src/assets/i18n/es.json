@@ -1,0 +1,8 @@
+{
+    "HOME": {
+        "TITLE": "Ejemplo de Proyecto Angular con i18n (Internazionalizatión)",
+        "ENGLISH": "Inglés",
+        "SPANISH": "Español",
+        "EUSKARA": "Euskara"
+    }
+}

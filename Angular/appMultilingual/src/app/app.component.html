@@ -1,0 +1,18 @@
+<div style="text-align: center">
+  <h1 (click)="selectLanguage">
+    {{ 'HOME.TITLE' | translate}}
+  </h1>
+  <select
+      [ngModel]="selectedLanguage"
+      (ngModelChange)="selectLanguage($event)">
+      <option value="es">
+        {{ 'HOME.SPANISH' | translate}}
+      </option>
+      <option value="en">
+        {{ 'HOME.ENGLISH' | translate}}
+      </option>
+      <option value="eus">
+        {{ 'HOME.EUSKARA' | translate}}
+      </option>
+  </select>
+</div>

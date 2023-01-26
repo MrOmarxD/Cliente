@@ -1,0 +1,8 @@
+{
+    "HOME": {
+        "TITLE": "i18n (Internazionalization) example to Angular Priject",
+        "ENGLISH": "English",
+        "SPANISH": "Spanish",
+        "EUSKARA": "Euskara"
+    }
+}
