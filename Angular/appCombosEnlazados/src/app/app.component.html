@@ -1,0 +1,29 @@
+<h1>Examen Angular 2ª Evaluación</h1>
+<table>
+    <tr>
+        <th>País</th>
+        <th>Provincia o Estado</th>
+        <th>Ciudad</th>
+    </tr>
+    <tr>
+        <td>
+            <select name="pais" class="pais" (change)="obtenerProvincias()">
+                <option value="0">-- seleccione un país --</option>
+                <option *ngFor="let pais of paises" value="{{ pais }}">{{pais}}</option>
+            </select>
+        </td>
+        <td>
+            <select name="provincia" class="provincia" (change)="obtenerCiudades()">
+                <option value="0">-- seleccione un estado o provincia --</option>
+                <option *ngFor="let provincia of provincias" value="{{ provincia }}">{{provincia}}</option>
+            </select>
+        </td>
+        <td>
+            <select name="ciudad" class="ciudad" (change)="mostrarMensaje()">
+                <option value="0">-- seleccione una ciudad --</option>
+                <option *ngFor="let ciudad of ciudades" value="{{ ciudad }}">{{ciudad}}</option>
+            </select>
+        </td>
+    </tr>
+</table>
+<div class="mensaje"></div>
